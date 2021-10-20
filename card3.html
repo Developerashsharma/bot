@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins'sans-serif;
+            border-radius: 15px;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #11112c;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#10a6d4, #d81b25);
+            clip-path: circle(30% at right 80%);
+        }
+        
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#2196f3, #e91e63);
+            clip-path: circle(20% at 10% 20%);
+        }
+        
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            flex-wrap: wrap;
+            z-index: 1;
+        }
+        
+        .container .card {
+            position: relative;
+            width: 250px;
+            height: 400px;
+            margin: 30px;
+            box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        
+        .container .card .content {
+            padding: 20px;
+            text-align: center;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: 0.5s;
+        }
+        
+        .container .card:hover .content {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        
+        .container .card .content h2 {
+            position: absolute;
+            top: -80px;
+            right: 30px;
+            font-size: 8em;
+            color: rgba(255, 255, 255, 0.05);
+            pointer-events: none;
+        }
+        
+        .container .card .content h3 {
+            font-size: 1.8em;
+            color: #fff;
+            z-index: 1;
+        }
+        
+        .container .card .content p {
+            font-size: 1em;
+            color: #fff;
+            font-weight: 300px;
+        }
+        
+        .container .card .content a {
+            position: relative;
+            display: inline-block;
+            padding: 8px 20px;
+            margin-top: 15px;
+            background: #fff;
+            color: #000;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="content">
+                <h2>01</h2>
+                <h3>Ashish Sharma</h3>
+                <p>Experienced in elearning development tools like Articulate Storyline, Captivate, Lectora and Camtasia. Very good communication skills and work with clients across the globe. Strong knowledge of graphic development/editing tools and ID
+                    methodologies.
+                </p>
+                <a href="#">Read more</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2>02</h2>
+                <h3>Alok Sharma</h3>
+                <p>This is Alok Sharma , i have a working experience of 1 years on .net technologies stack and i have experts knowledge in providing customized solutions. i have working knowledge in almost all niches of .net projects whether they are web
+                    based (aspx or mvc) or windows or mobile based projects.</p>
+                <a href="#">Read more</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2>03</h2>
+                <h3>Aditya Sharma</h3>
+                <p>I love to work on latest technologies , innovate and simultaneously help in making the world a great place to live. I like to learn new things , not only ...
+                </p>
+                <a href="#">Read more</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 1,
+        });
+    </script>
+
+</body>
+
+</html>
